@@ -8,9 +8,6 @@ const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
     mode: 'development',
-    entry: [
-        './src/app.js'
-    ],
     devServer: {
         hot: true,
         watchOptions: {
@@ -24,13 +21,6 @@ module.exports = {
                 use: 'vue-loader'
             },
             {
-                test: /\.css$/,
-                use: [
-                    'vue-style-loader',
-                    'css-loader'
-                ]
-            },
-            {
                 test: /\.styl(us)?$/,
                 use: [
                     'vue-style-loader',
@@ -41,6 +31,11 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: 'babel-loader'
+            },
+            {
+                test: /\.(js|vue)$/,
+                use: 'eslint-loader',
+                enforce: 'pre'
             }
         ]
     },
