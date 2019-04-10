@@ -4,7 +4,12 @@ const webpack = require('webpack');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const devMode = process.env.NODE_ENV !== 'production'
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const utils = require('./utils');
+
+const path = require('path');
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     mode: 'development',
@@ -16,6 +21,11 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.(js|vue)$/,
+                use: 'eslint-loader',
+                enforce: 'pre'
+            },
             {
                 test: /\.vue$/,
                 use: 'vue-loader'
@@ -31,11 +41,6 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: 'babel-loader'
-            },
-            {
-                test: /\.(js|vue)$/,
-                use: 'eslint-loader',
-                enforce: 'pre'
             }
         ]
     },
@@ -50,7 +55,12 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: devMode ? '[name].css' : '[name].[hash].css',
             chunkFilename: devMode ? '[id].css' : '[id].[hash].css'
-        })
+        }),
+        new CopyWebpackPlugin([{
+            from: utils.resolve('static/img'),
+            to: utils.resolve('dist/static/img'),
+            toType: 'dir'
+        }])
     ]
 };
 
