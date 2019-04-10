@@ -2,13 +2,13 @@
   <h1>Hello {{ name }}!</h1>
 </template>
 <script>
-import './index.scss'
+import "./index.scss"
 export default {
-  props: {
-    name: {
-      type: String,
-      required: true
+    props: {
+        name: {
+            type: String,
+            required: true
+        }
     }
-  }
 }
 </script>
