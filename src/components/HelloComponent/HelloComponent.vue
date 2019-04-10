@@ -1,5 +1,5 @@
 <template>
-  <h1>Hello {{ name }}!</h1>
+  <h1>{{ $store.getters.foo }}</h1>
 </template>
 <script>
 import './index.scss'
