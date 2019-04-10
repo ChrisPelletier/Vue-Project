@@ -8,7 +8,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const utils = require('./utils');
 
-const path = require('path');
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
@@ -33,7 +32,7 @@ module.exports = {
             {
                 test: /\.styl(us)?$/,
                 use: [
-                    'vue-style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'stylus-loader'
                 ]
