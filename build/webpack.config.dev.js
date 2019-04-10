@@ -30,16 +30,16 @@ module.exports = {
                 use: 'vue-loader'
             },
             {
-                test: /\.styl(us)?$/,
+                test: /\.js$/,
+                use: 'babel-loader'
+            },
+            {
+                test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'stylus-loader'
+                    'sass-loader'
                 ]
-            },
-            {
-                test: /\.js$/,
-                use: 'babel-loader'
             }
         ]
     },
