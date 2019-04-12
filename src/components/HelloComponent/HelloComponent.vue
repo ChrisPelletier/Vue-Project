@@ -4,11 +4,6 @@
 <script>
 import './index.scss'
 export default {
-    props: {
-        name: {
-            type: String,
-            required: true
-        }
-    }
+    props: {}
 }
 </script>

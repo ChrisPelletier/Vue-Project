@@ -1,6 +1,26 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-vue/src/index.scss';
 
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#appContent {
+  flex: 1;
+  overflow-y: scroll;
+  padding-top: 30px;
+}
+
 .full-width {
   width: 100%;
 }

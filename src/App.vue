@@ -1,21 +1,35 @@
 <template>
-  <div>
+  <div id="app">
     <b-navbar
       toggleable="lg"
       type="dark"
       variant="info"
     >
       <b-navbar-brand href="#">
-        Weather App
+        Chris Pelletier
       </b-navbar-brand>
+
+      <b-navbar-toggle target="nav-collapse" />
+
+      <b-collapse
+        id="nav-collapse"
+        is-nav
+      >
+        <b-navbar-nav>
+          <b-nav-item to="/about-me">
+            About Me
+          </b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
     </b-navbar>
-    <b-container fluid>
+    <b-container
+      id="appContent"
+      fluid
+    >
       <b-row>
         <b-col />
-        <b-col cols="10">
-          <div class="full-width center-content">
-            <hello-component name="Chris" />
-          </div>
+        <b-col sm="12" md="10">
+          <router-view />
         </b-col>
         <b-col />
       </b-row>
@@ -24,10 +38,7 @@
 </template>
 
 <script>
-import HelloComponent from './components/HelloComponent/HelloComponent.vue'
 export default {
-    components: {
-        HelloComponent
-    }
+    components: {}
 }
 </script>
