@@ -1,13 +1,24 @@
 <template>
   <b-container fluid>
     <b-row>
-      <b-col md="4" class="aboutMeColumn">
+      <b-col
+        md="4"
+        class="aboutMeColumn"
+      >
         <b-card title="About Me">
-          <b-img src="/static/img/profile-image.jpg" fluid rounded="circle" alt="Profile Image"></b-img>
+          <b-img
+            src="/static/img/profile-image.jpg"
+            fluid
+            rounded="circle"
+            alt="Profile Image"
+          />
           <hello-component />
         </b-card>
       </b-col>
-      <b-col md="8" class="aboutMeColumn">
+      <b-col
+        md="8"
+        class="aboutMeColumn"
+      >
         <b-card title="Information">
           <p>Some interesting info about me</p>
         </b-card>

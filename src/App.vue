@@ -28,7 +28,10 @@
     >
       <b-row>
         <b-col />
-        <b-col sm="12" md="10">
+        <b-col
+          sm="12"
+          md="10"
+        >
           <router-view />
         </b-col>
         <b-col />
